@@ -1,0 +1,86 @@
+{
+	"authorization": {
+		"containerFile": "utils/common-functions",
+		"method": "auth"
+	},
+	"endpoints": {
+		"get": {
+			"/api/v1/currentUser": {
+				"implementorFile": "implementors/users",
+				"method": "getCurrentUser",
+				"noAuth": true
+			},
+			"/api/v1/participant":{
+				"implementorFile": "implementors/participants",
+				"method": "getParticipants"
+			},
+			"/api/v1/participant/:id": {
+				"implementorFile": "implementors/participants",
+				"method": "getParticipantById"
+			},
+			"/api/v1/environment":{
+				"implementorFile": "implementors/environments",
+				"method": "getEnvironments"
+			},
+			"/api/v1/environment/:id":{
+				"implementorFile": "implementors/environments",
+				"method": "getEnvironmentById"
+			},
+			"/api/v1/experiment":{
+				"implementorFile": "implementors/experiments",
+				"method": "getExperiments"
+			},
+			"/api/v1/experiment/:id":{
+				"implementorFile": "implementors/experiments",
+				"method": "getExperimentById"
+			},
+			"/api/v1/experiment/:id/results":{
+				"implementorFile": "implementors/experiments",
+				"method": "getExperimentResults"
+			}
+		},
+		"post": {
+			"/api/v1/login": {
+				"implementorFile": "implementors/users",
+				"method": "login",
+				"noAuth": true
+			},
+			"/api/v1/participant":{
+				"implementorFile": "implementors/participants",
+				"method": "saveParticipant",
+				"noAuth": true
+			},
+			"/api/v1/environment":{
+				"implementorFile": "implementors/environments",
+				"method": "saveEnvironment",
+				"noAuth": true
+			},
+			"/api/v1/experiment":{
+				"implementorFile": "implementors/experiments",
+				"method": "saveExperiment",
+				"noAuth": true
+			},
+			"/api/v1/experiment/:experiment/results":{
+				"implementorFile": "implementors/experiments",
+				"method": "saveExperimentResults",
+				"noAuth": true
+			}
+		},
+		"delete": {
+			"/api/v1/environment/:id": {
+				"implementorFile": "implementors/environments",
+				"method": "deleteEnvironment"
+			},
+			"/api/v1/experiment/:id": {
+				"implementorFile": "implementors/experiments",
+				"method": "deleteExperiment"
+			}
+		},
+		"put": {
+			"/api/v1/participant/:id": {
+				"implementorFile": "implementors/participants",
+				"method": "updateParticipant"
+			}
+		}
+	}
+}
