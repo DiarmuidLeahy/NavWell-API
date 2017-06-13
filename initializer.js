@@ -15,17 +15,11 @@ exports.loadModules = function(app) {
 	console.log('Connecting to DB...' + app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
 	
 
-	mongoose.Promise = global.Promise;						/*KCor - as suggested(http://stackoverflow.com/questions/38138445/node3341-deprecationwarning-mongoose-mpromise)
-	//mongoose.connect('mongodb://10.7.0.3:27107/data/db');			 I placed 
-																			  "mongoose.Promise = global.Promise;
-																	 		   mongoose.connect('mongodb://10.7.0.3:27107/data/db');"
-
-																	 into this file however i commented out the 'mongoose.connect('mongodb://10.7.0.3:27107/data/db');'
-																	 and kept the original as it seemed to be just an example,
-																	 the result being a solution to the api warning "(node:14572) DeprecationWarning: Mongoose:
-																	 												 mpromise (mongoose's default promise library) 
-																	 												 is deprecated, plug in your own promise library 
-																	 												 instead: http://mongoosejs.com/docs/promises.html"
+	mongoose.Promise = require('bluebird');					/*Derri
+																
+																The old way we were handling promises was deprecated so I've replaced it with Bluebird which is said to be 4x faster
+																This also required adding Bluebird as a dependency in the package.json file
+																
 															*/
 	mongoose.connect(app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
 	console.log('Done');

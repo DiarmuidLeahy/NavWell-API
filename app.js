@@ -21,8 +21,6 @@ app.constants = require('./utils/navwell-constants.js');
 // Config
 app.configure(function () {
 	
-	app.use(express.bodyParser({ uploadDir: 'public/images/' }));
-	//app.use(express.bodyParser());
 	app.use(express.json());
     app.use(express.urlencoded());
 	app.use(express.methodOverride());
@@ -58,11 +56,11 @@ app.get('/api/v1/experiments/:id/results/csv', function (req, res) {
 		res.setHeader('Content-disposition', 'attachment; filename=experiment-results.csv');
 		res.set('Content-Type', 'text/csv');
 		res.status(200).send(data);
-	}, function(err){
+	}, function(err) {
 		res.status(404);
 	});
 });
 
 // Launch server
 var server = app.listen(app.configuration.getSetting(app.constants.CONFIG_PORTS));
-console.log('Server listening on port '+app.configuration.getSetting(app.constants.CONFIG_PORTS))
+console.log('Server listening on port '+app.configuration.getSetting(app.constants.CONFIG_PORTS));
