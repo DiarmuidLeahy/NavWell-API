@@ -6,7 +6,8 @@ var configuration =
 {
 	develop:
 	{
-		connectionString:'mongodb://localhost:27017/navwell-dev',	//This instance no longer exists so I've set currentEnvironment to production on line 32 below
+		//connectionString:'mongodb://192.168.1.113:27017/navwell-dev',	//This is an attempt to force the data to store locally instead of on an instance of mLab
+		connectionString:'mongodb://127.0.0.1:27017/navwell-dev',	//This is an attempt to force the data to store locally instead of on an instance of mLab
 		port:4242,
 		urlClient:'http://127.0.0.1:9000/#/',
 		enableCORS:true,
@@ -29,11 +30,15 @@ var configuration =
 	}
 };
 
-var currentEnvironment = 'production';
-//var currentEnvironment = 'develop';
+//var currentEnvironment = 'production';
+var currentEnvironment = 'develop';
 
 exports.getSetting = function(pSettingName) {
 	return configuration[currentEnvironment][pSettingName];
+};
+
+exports.setSetting = function(pSettingName, newValue) {
+	configuration[currentEnvironment][pSettingName] = newValue;
 };
 
 exports.getEnvironment = function() {

@@ -8,6 +8,7 @@ module.exports = function(app){
 
 	return {
 		getEnvironments: function (req, res){
+			console.log(req.ip);
 			var getEnvironments = Q.nbind(environmentsModel.find, environmentsModel);
 			return getEnvironments({}, null, {
 				sort: {'name':1}

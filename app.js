@@ -4,36 +4,39 @@
  
 var application_root = __dirname;
 var logger = require('./utils/logger');
-
 var express = require('express');
 var path = require('path');
 var passport = require('passport');
-
 var session = require('express-session');
-
 var app = express();
 var MongoStore = require('connect-mongo')(express);
 
 app.configuration = require('./config');
+
 app.constants = require('./utils/navwell-constants.js');
 
+/**************************************************************************************/
+// app.enable('trust proxy');
+
+// console.info(app.configuration.getSetting('connectionString'));
+// app.get('/', function (req, res) {
+//    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+//    app.configuration.setSetting('connectionString', ip);
+//    console.log("**************************here****************************");
+// });
+
+
+// console.info(app.configuration.getSetting('connectionString'));
+/**************************************************************************************/
 
 // Config
 app.configure(function () {
-	
+	//app.use(express.bodyParser({ uploadDir: 'public/images/' }));
 	app.use(express.json());
     app.use(express.urlencoded());
 	app.use(express.methodOverride());
 	app.use(express.cookieParser());
-	/**app.use(express.session({
-		store: new MongoStore({
-			url: app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING)
-		}),
-		secret: '1234567890QWERTY'
-	})); **/
 	app.use(passport.initialize());
-    //app.use(passport.session());
-
 	app.use(app.router);
 	app.use(express.static(path.join(application_root, "public")));
 	app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
@@ -64,3 +67,4 @@ app.get('/api/v1/experiments/:id/results/csv', function (req, res) {
 // Launch server
 var server = app.listen(app.configuration.getSetting(app.constants.CONFIG_PORTS));
 console.log('Server listening on port '+app.configuration.getSetting(app.constants.CONFIG_PORTS));
+

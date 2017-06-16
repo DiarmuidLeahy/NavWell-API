@@ -17,13 +17,13 @@ module.exports = function(app, mongoose){
 	    tag: { type: String },
 		permissions: [String],
 		isAdmin: { type: Boolean, default: true, required: true },
-		clientTag: [ String ],
-		advanceUser: [
-			{
-				clientTag: String,
-				advanced: Boolean
-			}
-		]
+		clientTag: [ String ]//,
+		// advanceUser: [
+		// 	{
+		// 		clientTag: String,
+		// 		advanced: Boolean
+		// 	}
+		// ]
 	});
 
 	user.pre('save', function(next) {

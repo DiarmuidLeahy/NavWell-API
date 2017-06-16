@@ -10,12 +10,13 @@ var models = {};
 exports.loadModules = function(app) {
 
 
-	console.log('');
+	//console.log('');
 	console.log('-------------------')
 	console.log('Connecting to DB...' + app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
 	
 
-	mongoose.Promise = require('bluebird');					/*Derri
+	mongoose.Promise = require('bluebird');					
+															/*Derri
 																
 																The old way we were handling promises was deprecated so I've replaced it with Bluebird which is said to be 4x faster
 																This also required adding Bluebird as a dependency in the package.json file
