@@ -22,8 +22,12 @@ exports.loadModules = function(app) {
 																This also required adding Bluebird as a dependency in the package.json file
 																
 															*/
-	mongoose.connect(app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
-	console.log('Done');
+	try {
+		mongoose.connect(app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
+		console.log('Done');
+	} catch(e) {
+		console.log(e);
+	}
 
 	console.log('Loading Models...');
 	var modelFiles = fs.readdirSync(app.constants.INIT_MODELS_FOLDER);
