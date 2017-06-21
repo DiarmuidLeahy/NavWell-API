@@ -10,24 +10,8 @@ var passport = require('passport');
 var session = require('express-session');
 var app = express();
 var MongoStore = require('connect-mongo')(express);
-
 app.configuration = require('./config');
-
 app.constants = require('./utils/navwell-constants.js');
-
-/**************************************************************************************/
-// app.enable('trust proxy');
-
-// console.info(app.configuration.getSetting('connectionString'));
-// app.get('/', function (req, res) {
-//    var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
-//    app.configuration.setSetting('connectionString', ip);
-//    console.log("**************************here****************************");
-// });
-
-
-// console.info(app.configuration.getSetting('connectionString'));
-/**************************************************************************************/
 
 // Config
 app.configure(function () {
