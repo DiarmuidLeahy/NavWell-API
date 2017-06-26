@@ -27,7 +27,7 @@ module.exports = function (app, passport) {
   // use local strategy
   passport.use(new LocalStrategy(
     /**
-     * fucntion to validate user with the database
+     * function to validate user with the database
      * @param  {String}   username - username of the user
      * @param  {String}   password - password of the user
      * @param  {callback} done - callback function

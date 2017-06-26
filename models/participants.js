@@ -7,7 +7,7 @@ module.exports = function(app, mongoose) {
 	    last_name: { type: String, required: false },
 	    notes: { type: String, required: false },
 		id: { type: String, required: true },
-		owner_id: {type: String, required: true},		//derri 
+		owner_id: {type: String, required: false},		//derri 
 		experiments: [Schema.Types.Mixed]
 	});
 	return mongoose.model('Participant', participants);

@@ -48,7 +48,7 @@ app.get('/api/v1/experiments/:id/results/csv', function (req, res) {
 	});
 });
 
+//console.log("Environment type : " + app.get('env'));
 // Launch server
 var server = app.listen(app.configuration.getSetting(app.constants.CONFIG_PORTS));
 console.log('Server listening on port '+app.configuration.getSetting(app.constants.CONFIG_PORTS));
-

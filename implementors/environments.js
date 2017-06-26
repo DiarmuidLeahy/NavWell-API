@@ -8,18 +8,6 @@ module.exports = function(app){
 
 	return {
 		getEnvironments: function (req, res){
-			console.info(app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
-
-
-
-			try {
-				mongoose.connect(app.configuration.getSetting(app.constants.CONFIG_CONNECTION_STRING));
-				console.log('Done');
-			} catch(e) {
-				console.log(e);
-			}
-
-			
 			//console.log(req.ips);
 			var getEnvironments = Q.nbind(environmentsModel.find, environmentsModel);
 			return getEnvironments({}, null, {
