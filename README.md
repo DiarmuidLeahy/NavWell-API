@@ -14,12 +14,10 @@ Download and install each of the following tools before installing NavWell
   - [Ruby v2.3.3](https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.3.3-x64.exe "2.3.3")
   - [Visual C++ Build Tools 2015](http://landinghub.visualstudio.com/visual-cpp-build-tools "2015")
   - [Git v2.13.2](https://git-scm.com/download/win "2.13.2")
+  - [MongoDB v3.4.5](https://www.mongodb.com/download-center "2.3.4")
   
   
 ## Installing the NavWell API
 
 Once each of the above dependencies are installed, you're ready to download and install the NavWell API
-Open a command prompt window and type
-    ```BASH
-    $ git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
-    ```
+Open a command prompt window and type ```html <br> ``` ```git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api```
