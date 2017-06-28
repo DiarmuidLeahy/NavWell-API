@@ -2,7 +2,7 @@
 NavWell is a Virtual Reality framework to determine memory and spatial navigation abilities. There are three distinct parts of the software;
 
   - The API which handles all interactions with the database
-  - The NavWell Administrator Console which is the interface allowing users to customize experiments and review findings
+  - The NavWell Administrator Console which is the interface allowing users to customize experiments and view results
   - A Virtual Reality application requiring [Oculus Rift](https://www.oculus.com/rift/) 
 
 
@@ -20,11 +20,28 @@ Download and install each of the following tools before installing NavWell
 ## Installing the NavWell API
 
 Once each of the above dependencies are installed, you're ready to download and install the NavWell API
-Open a command prompt window and type:
+Open a command prompt window and run the following commands:
+
   ```
-  git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
+  1 git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
+  2 cd navwell/api
+  3 npm install -g bower
+  4 npm install -g grunt
+  5 npm install -g grunt-cli
+  6 npm config set msvs_version 2015 -global
+  7 npm install bcrypt -save
+  8 npm install
+  
   ```
+  
+
+## Running the service
+
 Now before we can start using the software, we must first set up our database. To do this we need to open a new command prompt window and navigate to `"C:\Program Files\MongoDB\Server\3.4\bin"` and run:
   ```
   mongod
   ```
+If you see a message to the effect of `[thread1] waiting for connections on port 27017 `, we're happy! Leave this window open and open a new command prompt. From here, navigate to where you installed the API ("navwell/api" or similar) and run
+```
+node app
+```
