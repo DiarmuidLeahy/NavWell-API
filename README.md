@@ -7,17 +7,6 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
 
 
 ## Requirements and Dependencies
-### Hardware
-
-| Component               | Minimum Specification                             |
-| ----------------------- |:--------------------------------------------------|
-| Graphics Card           | NVIDIA GTX 1050 Ti / AMD Radeon RX 470 or greater |
-| Altrnative Graphics Card| NVIDIA GTX 960 4GB / AMD Radeon R9 290 or greater |
-| CPU                     | Intel i3-6100 / AMD FX4350 or greater             |
-| Memory                  | 8GB+ RAM                                          |
-| Video Outputs           | Compatible HDMI 1.3 video output                  |
-| USB Ports               | 1x USB 3.0 port, plus 2x USB 2.0 ports            |
-| OS                      | Windows 8.1 or newer                              |
 
 ### Software
 The following tools are required before the installation of NavWell
