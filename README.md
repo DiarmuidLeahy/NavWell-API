@@ -8,7 +8,7 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
 
 ## Requirements and Dependencies
 ### Hardware
-|Oculus rift requirements|
+|Oculus rift requirements                                                     |
 | Component               | Minimum Specification                             |
 | ----------------------- |:--------------------------------------------------|
 | Graphics Card           | NVIDIA GTX 1050 Ti / AMD Radeon RX 470 or greater |
