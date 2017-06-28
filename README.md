@@ -22,17 +22,15 @@ Download and install each of the following tools before installing NavWell
 Once each of the above dependencies are installed, you're ready to download and install the NavWell API
 Open a command prompt window and run the following commands:
 
-  ```
-  1 git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
-  2 cd navwell/api
-  3 npm install -g bower
-  4 npm install -g grunt
-  5 npm install -g grunt-cli
-  6 npm config set msvs_version 2015 -global
-  7 npm install bcrypt -save
-  8 npm install
-  
-  ```
+  1 `git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api`
+  2 `cd navwell/api`
+  3 `npm install -g bower`
+  4 `npm install -g grunt`
+  5 `npm install -g grunt-cli`
+  6 `npm config set msvs_version 2015 -global`
+  7 `npm install bcrypt -save`
+  8 `npm install`
+
   
 
 ## Running the service
