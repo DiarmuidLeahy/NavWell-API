@@ -8,9 +8,9 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
 
 ## Requirements and Dependencies
 ### Hardware
-
-| Component               | Minimum Spec                                      |
-| ----------------------- |:-------------------------------------------------:|
+|Oculus rift requirements|
+| Component               | Minimum Specification                             |
+| ----------------------- |:--------------------------------------------------|
 | Graphics Card           | NVIDIA GTX 1050 Ti / AMD Radeon RX 470 or greater |
 | Altrnative Graphics Card| NVIDIA GTX 960 4GB / AMD Radeon R9 290 or greater |
 | CPU                     | Intel i3-6100 / AMD FX4350 or greater             |
@@ -20,7 +20,7 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
 | OS                      | Windows 8.1 or newer                              |
 
 ### Software
-Download and install each of the following tools before installing NavWell
+The following tools are required before the installation of NavWell
   
   - [Node.js v6.11.0](https://nodejs.org/dist/v6.11.0/node-v6.11.0-x64.msi "Latest version")
   - [Python v2.7.13](https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi "Legacy version")
