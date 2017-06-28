@@ -24,3 +24,7 @@ Open a command prompt window and type:
   ```
   git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
   ```
+Now before we can start using the software, we must first set up our database. To do this we need to open a new command prompt window and navigate to `"C:\Program Files\MongoDB\Server\3.4\bin"` and run:
+  ```
+  mongod
+  ```
