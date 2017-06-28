@@ -16,9 +16,10 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
   - [Git v2.13.2](https://git-scm.com/download/win "2.13.2")
   
   
+## Installing the NavWell API
 
-```
-$ cd dillinger
-$ npm install -d
-$ node app
-```
+  > Once each of the above dependencies are installed, you're ready to download and install the NavWell API
+  > Open a command prompt window and type
+    ```
+    $ git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
+    ```
