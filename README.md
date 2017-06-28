@@ -20,4 +20,7 @@ Download and install each of the following tools before installing NavWell
 ## Installing the NavWell API
 
 Once each of the above dependencies are installed, you're ready to download and install the NavWell API
-Open a command prompt window and type ```html <br> ``` ```git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api```
+Open a command prompt window and type:
+  ```
+  git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
+  ```
