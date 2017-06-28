@@ -7,7 +7,7 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
 
 
 ## Requirements and Dependencies
-  > Download and install each of the following tools before installing NavWell
+Download and install each of the following tools before installing NavWell
   
   - [Node.js v6.11.0](https://nodejs.org/dist/v6.11.0/node-v6.11.0-x64.msi "Latest version")
   - [Python v2.7.13](https://www.python.org/ftp/python/2.7.13/python-2.7.13.msi "Legacy version")
@@ -18,8 +18,8 @@ NavWell is a Virtual Reality framework to determine memory and spatial navigatio
   
 ## Installing the NavWell API
 
-  > Once each of the above dependencies are installed, you're ready to download and install the NavWell API
-  > Open a command prompt window and type
-    ```
+Once each of the above dependencies are installed, you're ready to download and install the NavWell API
+Open a command prompt window and type
+    ```BASH
     $ git clone https://github.com/DiarmuidLeahy/NavWell-API.git navwell/api
     ```
