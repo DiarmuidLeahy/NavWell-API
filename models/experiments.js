@@ -5,20 +5,18 @@ module.exports = function(app, mongoose) {
 	var experiments = new Schema({
 	   								environment: { type: Schema.Types.Mixed, required: true },
 	    							name: { type: String, required: true },
-	    							//notes: { type: String, required: false },//attempting to resolve a note saving problem
-	    							/*kcor - added a required boolean variable to the schema so the api can expect to accept this additional variable*/
-	    							third_dimension: {type:Boolean, required:true, default: true},//kcor
+	    							third_dimension: {type:Boolean, required:true, default: true},
 
 									total_participants: { type: Number, required: true, default: 0 },
 									trials: [{
 												duration:  { type: Number, required: true },
 												rest:  { type: Number, required: true },
 												retention:  { type: Boolean, required: true, default: false},
-												visible:  { type: Boolean, required: true, default: false}, 	//(Derri) - Visible platform attribute added here
+												visible:  { type: Boolean, required: true, default: false},
 												start_position: [Number],
 											}],
 									results: [{
-												third_dimension:{type:String, required:true, default: "3D"},//kcor - added for results view, string makes it easier as initially we want it to be null when exp is created
+												third_dimension:{type:String, required:true, default: "3D"},
 												participant_name: { type: String, required: true },
 												participant_id: { type: String, required: true },
 												avg_time: { type: Number, required: true },

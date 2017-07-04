@@ -19,7 +19,7 @@ module.exports = function(app)
 		return res;
   	};
 
-  	var getResultsStats = function(results, platform, scale, arena_type)//results is of type array-kcor
+  	var getResultsStats = function(results, platform, scale, arena_type)
   	{
   		//Total times that the goal was found
   		var total_goal_found = 0,
@@ -193,8 +193,7 @@ module.exports = function(app)
   		return {
   			total_goal_found: total_goal_found,
   			avg_time: avg_time,
-  			third_dimension: res.third_dimension,  //kcor - added the third_dimension variable here as required by the experiment.js model			
-  			//notes:res.notes,//kcor - test
+  			third_dimension: res.third_dimension,
   			avg_path: avg_path,
   			goal_q: goal_q_percentage,
   			trials: trials,
@@ -251,7 +250,7 @@ module.exports = function(app)
 			});
 		},
 
-		getExperimentResultsCSV: function(id){//kcor - due to the addition of third_dimension this may have to be reconfigured as one participant may have a 2d and 3d version
+		getExperimentResultsCSV: function(id){
 			var getExperiment = Q.nbind(experimentsModel.findOne, experimentsModel);
 			return getExperiment({'_id': id}, null, {})
 			.then(function(exp) {
@@ -280,9 +279,6 @@ module.exports = function(app)
 			var experiment = new experimentsModel({
 				environment: req.body.environment,
 				name: req.body.name,
-				
-				/*kcor - by default in the experiment.js model third_dimension is true. note no results have yet been assigned to this experiment */
-				
 				start_position: req.body.start_position,
 				trials: req.body.trials,
 				results: []
@@ -299,15 +295,7 @@ module.exports = function(app)
 					return new Response(app.constants.ERROR_DATABASE, app.constants.CODE_SERVER_ERROR);
 				}
 			});
-		}, 
-
-		/*saveNotes: function(exp){//kcor
-			var notes;
-			notes += addNote;
-			participant.experiments[i].push({
-				notes:notes
-			})
-		},*/
+		},
 
 		deleteExperiment: function(req, res){
 			var removeExp = Q.nbind(experimentsModel.remove, experimentsModel);
@@ -339,24 +327,17 @@ module.exports = function(app)
 						//Find the current experiment
 						for (var i = 0; i < participant.experiments.length; i++){
 							
-							/*kcor - added an &&second condition so that we can save both 2d and 3d as individual experiments. remember that third_dimension is always true for unattempted experiments*/
 							if(participant.experiments[i]._id == experimentId && !participant.experiments[i].attempted){
 
 								participant.experiments[i].date_taken = new Date();
 								participant.experiments[i].attempted = true;
 								
-								/*accessed boolean value through the specified object path(noted similar location to participantid)*/
-								participant.experiments[i].third_dimension= req.body.third_dimension; //kcor
+								participant.experiments[i].third_dimension= req.body.third_dimension;
 								
 								participant.experiments[i].goal_found = results_stats.total_goal_found;
 								participant.experiments[i].results.push({
 									goal_q: results_stats.goal_q,
-									avg_path: results_stats.avg_path,
-									
-									/*kcor - should i initialise a result 3d here? ans: i don't believe there is any need as the only reaason 
-									i made a 3d in results was so under experiments there would be a 3d boolean for each result(see mongodb experiments) 
-									so there is no need to specically add it here*/
-									
+									avg_path: results_stats.avg_path,									
 									avg_time: results_stats.avg_time, 
 									quadrants: results_stats.quadrants,
 									trials: results_stats.trials
@@ -390,9 +371,7 @@ module.exports = function(app)
 
 							experiment.results.push({
 								participant_name: participant.first_name + " " + participant.last_name,
-								
-								third_dimension: req.body.third_dimension ? "3D" : "2D",//kcor -  attempt to reslove results view for switch between 2d and 3d
-								
+								third_dimension: req.body.third_dimension ? "3D" : "2D",
 								participant_id: participant.id,
 								avg_path: results_stats.avg_path,
 								avg_time: results_stats.avg_time,

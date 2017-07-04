@@ -12,7 +12,7 @@ module.exports = function(app, mongoose) {
 			point: [Number],
 			size:  { type: String, required: true },
 			type:  { type: String, required: true },
-			colour: {type: String, required: false},	//Derri
+			colour: {type: String, required: false},
 			intensity:  { type: Number, required: false, min: 0, max: 100 },
 		}],
 	});
