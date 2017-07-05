@@ -22,7 +22,7 @@ var configuration =
 {
 	develop:
 	{
-		connectionString:'mongodb://127.0.0.1:27017/navwell-dev',									//Localhost
+		connectionString:'mongodb://127.0.0.1:27017/navwell',									//Localhost
 		port:4242,
 		urlClient:'http://127.0.0.1:9000/#/',
 		enableCORS:true,
