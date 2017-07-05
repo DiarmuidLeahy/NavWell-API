@@ -1,8 +1,8 @@
 # NavWell
 NavWell is a Virtual Reality framework to determine memory and spatial navigation abilities. There are three distinct parts of the software;
 
-  - The API which handles all interactions with the database
-  - The [NavWell Administrator Console](https://github.com/DiarmuidLeahy/NavWell-Admin-Console "GitHub Repo") which is the interface allowing users to customize experiments and view results
+  - The API handles all interactions with the database
+  - The [NavWell Administrator Console](https://github.com/DiarmuidLeahy/NavWell-Admin-Console "GitHub Repo") is the interface allowing users to customize experiments and view results
   - A [Virtual Reality application](https://github.com/DiarmuidLeahy/NavWell-VR "GitHub Repo") requiring [Oculus Rift](https://www.oculus.com/rift/ "Oculus website") 
 
 
